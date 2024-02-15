@@ -209,8 +209,8 @@ class Grid {
                     }
                     avg /= c;
                     if (avg < val[x][y]) {
-                        val[x][y] = (0.7*avg + 0.3*val[x][y]);
-                        counter[x][y] = 3;
+                        val[x][y] = (0.5*avg + 0.5*val[x][y]);
+                        counter[x][y] = 2;
                     }
                     if (counter[x][y] > 0)
                         counter[x][y]--;
@@ -347,10 +347,8 @@ class Ant {
             }
 
             if (underground == Map::WALL || underground == Map::WALL_DESTROY) {
-                while (underground == Map::WALL || underground == Map::WALL_DESTROY) {
-                    underground = m.getMode(position.x, position.y, this->mode);
-                    position -= velocity;
-                }
+                position -= velocity;
+                position -= velocity;
                 this->velocity = -rotateVec(this->velocity, rand()%100 / 100.f * 1 - 0.5);
             }
 
