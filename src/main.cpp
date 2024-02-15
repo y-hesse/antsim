@@ -472,7 +472,7 @@ int main()
     bool drawGrid = true;
     Map::EnvType drawSetting = Map::WALL;
 
-    sf::View view(sf::FloatRect(0.f, 0.f, 720/3.f, 1080/3.f));
+    sf::View view(sf::FloatRect(0.f, 0.f, WIDTH/3.f, HEIGHT/3.f));
     // run the program as long as the window is open
 //#pragma omp parallel default(shared)
 
